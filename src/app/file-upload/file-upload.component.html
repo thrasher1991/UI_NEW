@@ -1,0 +1,10 @@
+<!-- <p-fileUpload name="demo[]" (onUpload)="onUpload($event)" multiple="multiple" maxFileSize="1000000">
+    <ng-template pTemplate="content">
+        <ul *ngIf="uploadedFiles.length">
+            <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+        </ul>
+    </ng-template>
+</p-fileUpload> -->
+<p-panel header="File Upload">
+<input type="file" (change)="fileChange($event)" placeholder="Upload file" />
+</p-panel>

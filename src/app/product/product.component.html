@@ -1,0 +1,24 @@
+<button pButton type="button" label="Back" routerLink="/product-list"></button><br/>
+<br/>
+<p-panel header="{{productDetails.productName}}">
+    <div class="ui-g">
+        <div class="ui-g-4">
+
+            <img class="img-css" src="../../assets/ING-bank-logo.png" width="70%">
+
+        </div>
+        <div class="ui-g-8 ui-g-nopad">
+            <div class="ui-g-12">
+                <h6><b>Product ID:</b><br/><br/>{{productDetails.productId}}</h6>
+            </div>
+            <div class="ui-g-12">
+                <h6><b>Product Name:</b><br/><br/>{{productDetails.productName}}</h6>
+            </div>
+            <div class="ui-g-12">
+                    <h6> <b>Product Description:</b><br/><br/>{{productDetails.productDescription}}</h6>
+            </div>
+           
+        </div>
+
+    </div>
+</p-panel>

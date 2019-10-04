@@ -1,0 +1,74 @@
+<p-panel header="Categories">
+    <!-- <div class="collapse d-md-flex bg-light pt-2 min-vh-100" id="sidebar">
+        <ul class="nav flex-column flex-nowrap">
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#submenu1" data-toggle="collapse"
+                    data-target="#submenu1" *ngFor="let res of categoryDetails" (click)="viewData(res.categoryId)">{{res.categoryName}}</a>
+                    <hr/>
+                    <div *ngFor="let res of productDetails">
+                    <ul class="flex-column pl-2 nav">
+                        <li class="nav-item"><a class="nav-link py-0" (click)="viewProducts(productId)">{{res.productName}}</a></li>
+                        
+                    </ul>
+                </div> 
+            </li>
+
+        </ul>
+    </div> -->
+    <!-- <p-accordion>
+            <p-accordionTab header="Header 1" [selected]="true">
+               Content 1
+            </p-accordionTab>
+            <p-accordionTab header="Header 2">
+                Content 2
+            </p-accordionTab>
+            <p-accordionTab header="Header 3">
+                Content 3    
+            </p-accordionTab>
+        </p-accordion> -->
+    <!-- <p-accordion>
+                <p-accordionTab header="Header 1">
+                    Content 1
+                </p-accordionTab>
+                <p-accordionTab header="Header 2"  (click)="viewProducts({categoryId: 1})">
+                    <ng-template pTemplate="content" >
+                        <button (click)="detailedView(11)">Complex Content to Lazy Load</button>
+                    </ng-template>
+                </p-accordionTab>
+                <p-accordionTab header="Header 3">
+                    <ng-template pTemplate="content">
+                        Complex Content to Lazy Load
+                    </ng-template>
+                </p-accordionTab>
+            </p-accordion> -->
+    <!-- <p-accordion>
+        <p-accordionTab header="Godfather I" [selected]="true">
+            <p-header>
+                <span>Godfather I
+                    <input type="checkbox" (click)="viewProducts({categoryId: 1})">
+                </span>
+            </p-header>
+            Some Text<button (click)="detailedView($event, 111)">Body</button>
+        </p-accordionTab>
+    </p-accordion>
+    -->
+    <p-accordion>
+        <p-accordionTab *ngFor="let res of categoryDetails" (click)="viewProducts(res)">
+            <p-header>
+                <span (click)="viewProducts(res)">{{res.categoryName}} </span>
+            </p-header>
+
+            <div *ngFor="let prod of productDetails">
+                <ul class="flex-column pl-2 nav">
+                    <li class="nav-item" (click)="detailedView($event,prod)"><a class="nav-link py-0">{{prod.productName}}</a>
+                    </li>
+
+                </ul>
+            </div>
+        </p-accordionTab>
+    </p-accordion>
+
+</p-panel>
+<div>
+</div>
